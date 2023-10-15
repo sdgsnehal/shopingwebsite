@@ -6,7 +6,7 @@
         width:300vw;
         display: flex;
         height: 100%;
-        transform: translateX(-200vw);
+        transition: all 1s ease;
         img{
             width: 100vw;
             height: 100%;
