@@ -24,7 +24,7 @@ const Product = () => {
       </div>
       <div className="right">
         <h1>Title</h1>
-        <span>$199</span>
+        <span className="price">$199</span>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
           officiis expedita! Quae omnis, aut eveniet odit rem nesciunt iste quia
@@ -44,7 +44,7 @@ const Product = () => {
             +
           </button>
         </div>
-        <button>
+        <button className="add">
           <AddShoppingCartIcon />
           ADD TO CART
         </button>
