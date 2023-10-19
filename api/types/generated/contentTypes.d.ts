@@ -698,7 +698,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     sub_categories: Attribute.Relation<
       'api::category.category',
-      'oneToMany',
+      'manyToMany',
       'api::sub-category.sub-category'
     >;
     createdAt: Attribute.DateTime;
@@ -747,6 +747,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::sub-category.sub-category'
     >;
+    type: Attribute.Enumeration<['featured', 'trending', 'normal']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -783,9 +784,9 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'manyToMany',
       'api::product.product'
     >;
-    category: Attribute.Relation<
+    categories: Attribute.Relation<
       'api::sub-category.sub-category',
-      'manyToOne',
+      'manyToMany',
       'api::category.category'
     >;
     createdAt: Attribute.DateTime;
