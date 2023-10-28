@@ -7,14 +7,14 @@ const Card = ({ item }) => {
     <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
         <div className="image">
-          {item.isNew && <span>New Season</span>}
-          <img src={item.img} alt="" className="mainImg" />
-          <img src={item.img2} alt="" className="secondImg" />
+          {item?.attributes.isNew && <span>New Season</span>}
+          <img src={import.meta.env.VITE_API_UPLOAD_URL + item?.attributes.img.data.attributes.url} alt="" className="mainImg" />
+          <img src={import.meta.env.VITE_API_UPLOAD_URL + item?.attributes.img2.data.attributes.url} alt="" className="secondImg" />
         </div>
-        <h2>{item.title}</h2>
+        <h2>{item?.attributes.title}</h2>
         <div className="prices">
-          <h3>${item.oldprice}</h3>
-          <h3>${item.price}</h3>
+          <h3>${item?.attributes.discountPrice || item?.attributes.price+200}</h3>
+          <h3>${item?.attributes.price}</h3>
         </div>
       </div>
     </Link>
